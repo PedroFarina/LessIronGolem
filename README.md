@@ -11,7 +11,7 @@ If you're here you probably heard some of the following complains:
 A simple and elegant plugin which it's only purpose is to bring down those numbers!
 
 ### Commands
-_/igmin <value>_ - sets the minimum amount of iron ingot dropped by Iron Golem mobs.
+_/igmin <value>_ - sets the minimum amount of iron ingots dropped by Iron Golem mobs.
 
 _/igmax <value>_ - sets the maximum amount of iron ingots dropped by Iron Golem mobs.
 
