@@ -5,6 +5,7 @@ If you're here you probably heard some of the following complains:
 - _"I have no time to mine"_ - the guy who spends 18h online making farms
 - _"5 packs of iron/h isn't that much"_ - the railroad guys
 - _"Iron is only a replacement while we don't have diamonds"_ - the X-Ray texture guy
+
 *Well*, I never liked iron farming as well but since it's now a thing seems that mojang won't fix it anytime soon. *BUT WORRY NOT*, for I bring you the solution:
 
 ## Less Iron Golem Drop
