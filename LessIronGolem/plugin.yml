@@ -1,0 +1,10 @@
+name: LessIronGolem
+main: com.pedrofarina.LessIronGolem.Main
+version: 1.0 (alpha)
+commands:
+    igmin:
+      description: sets minimum value of iron ingots drops.
+      usage: /igmin 2
+    igmax:
+      description: sets maximum value of iron ingots drops.
+      usage: /igmaximum 4
