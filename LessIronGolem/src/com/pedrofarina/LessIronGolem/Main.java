@@ -7,6 +7,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import net.md_5.bungee.api.ChatColor;
+
 import java.util.concurrent.ThreadLocalRandom;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -58,7 +61,11 @@ public class Main extends JavaPlugin implements Listener {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
-		String message = "Sorry, wrong input.";
+		if(!player.hasPermission("ironGolem")) {
+			player.sendMessage(ChatColor.RED + "You do not have the permission to do that!");
+			return true;
+		}
+		String message = ChatColor.YELLOW + "Oops, you can't set them negative! Try a value > 0.";
 		if (sender instanceof Player) {
 			String lowerCMD = cmd.getName().toLowerCase();
 			int value = toInt(args[0]);
@@ -66,7 +73,7 @@ public class Main extends JavaPlugin implements Listener {
 				switch(lowerCMD) {
 				case "igmin":
 					min = value;
-					message = "Successfully set a new minimum.";
+					message = ChatColor.GREEN + "Minimum value is now " + String.valueOf(min) + ".";
 					getConfig().set("min", String.valueOf(min));
 					saveConfig();
 					break;
@@ -74,15 +81,15 @@ public class Main extends JavaPlugin implements Listener {
 					max = value;
 					getConfig().set("max", String.valueOf(max));
 					saveConfig();
-					message = "Successfully set a new maximum.";
+					message = ChatColor.GREEN + "Maximum value is now " + String.valueOf(max) + ".";
 					break;
 					default:
-						message = "Sorry, couldn't understand that.";
+						message = ChatColor.RED + "Sorry, you weren't meant to do that.";
 						break;
 				}
 			}
 		} else {
-			message = "Sorry, couldn't understand that.";
+			message = ChatColor.RED + "Sorry, you weren't meant to do that.";
 		}
 		player.sendMessage(message);
 		return true;
